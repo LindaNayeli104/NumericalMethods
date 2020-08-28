@@ -3,11 +3,11 @@ import math
 
 def biseccion(fun, x_l, x_r, tol):
     # x_l < x_r
-    x_m = (x_r - x_l) / 2
+    x_m = (x_r + x_l) / 2
     fm = fun(x_m)
     candidate = math.fabs(fm)
     while candidate > tol:               #tolerance 
-        x_m = (x_r - x_l) / 2
+        x_m = (x_r + x_l) / 2
         fm = fun(x_m)              #Evaluation of the function in the middle point
         candidate = math.fabs(fm)
         if candidate < tol:
