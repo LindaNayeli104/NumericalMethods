@@ -43,11 +43,10 @@ def bairstow(a,tol1, tol2, r0, s0, grado):
             c[grado] = b[grado]
             c[grado-1] = b[grado-1] + r*c[grado]
 
-            i = grado-2
-            while i>=-1:
+            for i in range(grado-2,-1,-1):
                 b[i] = a[i] + r*b[i+1] + s*b[i+2]
                 c[i] = b[i] + r * c[i + 1] + s * c[i + 2]
-                i-=1
+
 
             #Resolver sistema de ecuaciones
             det = c[2]*c[2] -c[3]*c[1]
@@ -86,5 +85,7 @@ def bairstow(a,tol1, tol2, r0, s0, grado):
 
 if __name__ == '__main__':
     ec = [6,11,6,1]
-    print(bairstow(ec, 0.0001,0.0001,10,8,3))
+    #print(bairstow(ec, 0.001,0.001,-5,4,3))
+    ec2 = [1,-1,0,0,-1,1]
+    print(bairstow(ec2, 0.001, 0.001, -5, 4, 5))
 
