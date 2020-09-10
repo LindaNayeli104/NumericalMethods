@@ -1,3 +1,6 @@
+#Linda Abundis 
+#Daniel Diaz
+
 from math import sqrt
 from math import fabs
 
